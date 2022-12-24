@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:foodproject/config/colors.dart';
+import 'package:foodproject/models/users.dart';
 
 enum SigninCharacter { fill, outline }
 
 class ProductOverview extends StatefulWidget {
-  const ProductOverview({super.key});
+  final String productName;
+  final String productImage;
+
+  const ProductOverview(
+      {super.key, required this.productName, required this.productImage});
 
   @override
   State<ProductOverview> createState() => _ProductOverviewState();
@@ -82,19 +87,21 @@ class _ProductOverviewState extends State<ProductOverview> {
       body: Column(
         children: [
           Expanded(
+            flex: 2,
             child: Container(
               width: double.infinity,
               child: Column(
                 children: [
-                  const ListTile(
-                    title: Text("Fresh Basil"),
+                  ListTile(
+                    title: Text(widget.productName),
                     subtitle: Text("\$50"),
                   ),
                   Container(
                     height: 150,
                     padding: const EdgeInsets.all(40),
                     child: Image.network(
-                        'https://cdnimg.webstaurantstore.com/uploads/blog/2021/5/fresh-dragon-fruit-sliced-in-half-on-wooden-board-min.jpg'),
+                      widget.productImage,
+                    ),
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -170,6 +177,7 @@ class _ProductOverviewState extends State<ProductOverview> {
             ),
           ),
           Expanded(
+            flex: 2,
             child: Container(
               padding: const EdgeInsets.all(20),
               width: double.infinity,

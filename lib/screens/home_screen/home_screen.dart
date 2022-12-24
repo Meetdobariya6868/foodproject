@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodproject/config/colors.dart';
 import 'package:foodproject/screens/product_overview/product_overview.dart';
+import '../../models/users.dart';
 import 'drawer_side.dart';
 import 'single_product.dart';
 
@@ -37,8 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               SingleProduct(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const ProductOverview()));
+                  // setState(() {
+                  //   Navigator.of(context).push(
+                  //     MaterialPageRoute(
+                  //       builder: (context) => ProductOverview(
+                  //         productImage:
+                  //             'https://cdnimg.webstaurantstore.com/uploads/blog/2021/5/fresh-dragon-fruit-sliced-in-half-on-wooden-board-min.jpg',
+                  //         productName: 'Fresh Basil',
+                  //       ),
+                  //     ),
+                  //   );
+                  // });
                 },
                 productImage:
                     'https://cdnimg.webstaurantstore.com/uploads/blog/2021/5/fresh-dragon-fruit-sliced-in-half-on-wooden-board-min.jpg',
@@ -150,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text('Root Vegetables'),
               Text(
                 'view all',

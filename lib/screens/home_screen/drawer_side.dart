@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:foodproject/config/colors.dart';
+import 'package:foodproject/screens/my_profile/my_profile.dart';
 
 class DrawerSide extends StatelessWidget {
   const DrawerSide({super.key});
 
-  Widget listTile({IconData? icon, required String title}) {
+  Widget listTile(
+      {IconData? icon, required String title, required Function onTap}) {
     return ListTile(
+      onTap: onTap(),
       leading: Icon(
         icon,
         size: 32,
@@ -78,34 +81,45 @@ class DrawerSide extends StatelessWidget {
             listTile(
               icon: Icons.home_outlined,
               title: "Home",
+              onTap: () {},
             ),
             listTile(
               icon: Icons.shop_outlined,
               title: "Review Cart",
+              onTap: () {},
             ),
             listTile(
-              icon: Icons.person_outline,
-              title: "My Profile",
-            ),
+                icon: Icons.person_outline,
+                title: "My Profile",
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => MyProfile(),
+                  ));
+                }),
             listTile(
               icon: Icons.notifications_outlined,
               title: "Notification",
+              onTap: () {},
             ),
             listTile(
               icon: Icons.star_outline,
               title: "Rating & Review",
+              onTap: () {},
             ),
             listTile(
               icon: Icons.favorite_outline,
               title: "Wishlist",
+              onTap: () {},
             ),
             listTile(
               icon: Icons.copy_outlined,
               title: "Raise a Complaint",
+              onTap: () {},
             ),
             listTile(
               icon: Icons.format_quote_outlined,
               title: "FAQs",
+              onTap: () {},
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
