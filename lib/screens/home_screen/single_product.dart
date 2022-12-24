@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodproject/config/colors.dart';
 
 class SingleProduct extends StatelessWidget {
   // const SingleProduct({super.key});
@@ -39,6 +40,7 @@ class SingleProduct extends StatelessWidget {
                     width: double.infinity,
                     child: Image.network(
                       productImage,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),
@@ -52,7 +54,7 @@ class SingleProduct extends StatelessWidget {
                         Text(
                           productName,
                           style: TextStyle(
-                            color: Colors.black,
+                            color: textColor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

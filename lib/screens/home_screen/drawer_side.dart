@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodproject/config/colors.dart';
 
 class DrawerSide extends StatelessWidget {
   const DrawerSide({super.key});
@@ -11,8 +12,8 @@ class DrawerSide extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: const TextStyle(
-          color: Colors.black45,
+        style: TextStyle(
+          color: textColor,
         ),
       ),
     );
@@ -22,23 +23,21 @@ class DrawerSide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: const Color(0xffd1ad17),
+        color: primaryColor,
         child: ListView(
           children: [
             DrawerHeader(
               child: Row(
                 children: [
                   const CircleAvatar(
-                    backgroundColor: Colors.white54,
                     radius: 43,
+                    backgroundColor: Colors.white54,
                     child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: Colors.red,
-                      child: Image(
-                        fit: BoxFit.contain,
-                        image: NetworkImage(
-                            'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2016/05/facebook-shadow-profiles-1464598164.jpg'),
+                      backgroundColor: Colors.yellow,
+                      backgroundImage: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu-mQF_UUZagnb5DP7M4MiRETlP-byM-qeZQ&usqp=CAU',
                       ),
+                      radius: 40,
                     ),
                   ),
                   const SizedBox(

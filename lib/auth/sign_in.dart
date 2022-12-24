@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, no_leading_underscores_for_local_identifiers, unused_local_variable, unnecessary_null_comparison, use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
@@ -36,7 +38,7 @@ class _SignInState extends State<SignIn> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => const HomeScreen(),
           ),
         );
       }
@@ -67,7 +69,7 @@ class _SignInState extends State<SignIn> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 400,
               width: double.infinity,
               // color: Colors.red,
