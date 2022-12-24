@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodproject/config/colors.dart';
 import 'package:foodproject/screens/product_overview/product_overview.dart';
+import 'package:foodproject/screens/search/search.dart';
 import '../../models/users.dart';
 import 'drawer_side.dart';
 import 'single_product.dart';
@@ -227,7 +228,11 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: const Color(0xffd6d382),
             child: IconButton(
               onPressed: () {
-                return;
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Search(),
+                  ),
+                );
               },
               icon: Icon(
                 Icons.search,
