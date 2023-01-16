@@ -5,22 +5,22 @@ import 'package:foodproject/screens/home_screen/drawer_side.dart';
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
 
-  @override
   Widget listTile({required IconData icon, required String title}) {
     return Column(
       children: [
-        Divider(
+        const Divider(
           height: 1,
         ),
         ListTile(
           leading: Icon(icon),
           title: Text(title),
-          trailing: Icon(Icons.arrow_forward_ios),
+          trailing: const Icon(Icons.arrow_forward_ios),
         )
       ],
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
@@ -35,7 +35,6 @@ class MyProfile extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const DrawerSide(),
       body: Stack(
         children: [
           Column(
@@ -50,11 +49,12 @@ class MyProfile extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 decoration: BoxDecoration(
-                    color: scaffoldBackgroundColor,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    )),
+                  color: scaffoldBackgroundColor,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  ),
+                ),
                 child: ListView(
                   children: [
                     Row(

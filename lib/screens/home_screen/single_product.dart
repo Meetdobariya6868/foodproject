@@ -23,7 +23,7 @@ class SingleProduct extends StatelessWidget {
             margin: const EdgeInsets.only(
               right: 10,
             ),
-            height: 230,
+            height: 240,
             width: 165,
             decoration: BoxDecoration(
               color: const Color(0xffd9dad9),
@@ -67,6 +67,7 @@ class SingleProduct extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(
+                              flex: 1,
                               child: Container(
                                 padding: const EdgeInsets.only(left: 5),
                                 height: 30,
@@ -80,7 +81,7 @@ class SingleProduct extends StatelessWidget {
                                     Expanded(
                                       child: Text(
                                         '50 Gram',
-                                        style: TextStyle(fontSize: 10),
+                                        style: TextStyle(fontSize: 9),
                                       ),
                                     ),
                                     Icon(
@@ -96,6 +97,7 @@ class SingleProduct extends StatelessWidget {
                               width: 5,
                             ),
                             Expanded(
+                              flex: 1,
                               child: Container(
                                 height: 30,
                                 width: 50,

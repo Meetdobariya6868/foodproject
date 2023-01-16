@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:foodproject/auth/sign_in.dart';
 import 'package:foodproject/config/colors.dart';
 import 'package:foodproject/screens/product_overview/product_overview.dart';
 import 'screens/home_screen/home_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      // debugShowCheckedModeBanner: false,
       // routes: {
       //   '/':(context) => HomeScreen(),
       //   'product_overview':(context) => ProductOverview(productName: 'productName', productImage: 'productImage'),
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         primaryColor: primaryColor,
         backgroundColor: scaffoldBackgroundColor,
       ),
-      home: const HomeScreen(),
+      home: const SignIn(),
     );
   }
 }

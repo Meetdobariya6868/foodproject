@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodproject/config/colors.dart';
-import 'package:foodproject/screens/search/search_item.dart';
+import 'package:foodproject/widgets/single_item.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -43,10 +43,18 @@ class Search extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const SearchItem(),
-          const SearchItem(),
-          const SearchItem(),
-          const SearchItem(),
+          SingleItem(
+            isBool: false,
+          ),
+          SingleItem(
+            isBool: false,
+          ),
+          SingleItem(
+            isBool: false,
+          ),
+          SingleItem(
+            isBool: false,
+          ),
         ],
       ),
     );

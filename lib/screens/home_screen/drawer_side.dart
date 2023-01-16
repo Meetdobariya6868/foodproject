@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:foodproject/config/colors.dart';
+import 'package:foodproject/screens/home_screen/home_screen.dart';
 import 'package:foodproject/screens/my_profile/my_profile.dart';
+import 'package:foodproject/screens/review_cart/review_cart.dart';
 
 class DrawerSide extends StatelessWidget {
   const DrawerSide({super.key});
 
-  Widget listTile(
-      {IconData? icon, required String title, required Function onTap}) {
+  Widget listTile({
+    IconData? icon,
+    required String title,
+  }) {
     return ListTile(
-      onTap: onTap(),
+      // onTap: onTap(),
       leading: Icon(
         icon,
         size: 32,
@@ -78,48 +82,79 @@ class DrawerSide extends StatelessWidget {
                 ],
               ),
             ),
-            listTile(
-              icon: Icons.home_outlined,
-              title: "Home",
-              onTap: () {},
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                );
+              },
+              child: listTile(
+                icon: Icons.home_outlined,
+                title: "Home",
+              ),
             ),
-            listTile(
-              icon: Icons.shop_outlined,
-              title: "Review Cart",
-              onTap: () {},
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ReviewCart(),
+                  ),
+                );
+              },
+              child: listTile(
+                icon: Icons.shop_outlined,
+                title: "Review Cart",
+              ),
             ),
-            listTile(
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const MyProfile(),
+                  ),
+                );
+              },
+              child: listTile(
                 icon: Icons.person_outline,
                 title: "My Profile",
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => MyProfile(),
-                  ));
-                }),
-            listTile(
-              icon: Icons.notifications_outlined,
-              title: "Notification",
-              onTap: () {},
+              ),
             ),
-            listTile(
-              icon: Icons.star_outline,
-              title: "Rating & Review",
+            GestureDetector(
               onTap: () {},
+              child: listTile(
+                icon: Icons.notifications_outlined,
+                title: "Notification",
+              ),
             ),
-            listTile(
-              icon: Icons.favorite_outline,
-              title: "Wishlist",
+            GestureDetector(
               onTap: () {},
+              child: listTile(
+                icon: Icons.star_outline,
+                title: "Rating & Review",
+              ),
             ),
-            listTile(
-              icon: Icons.copy_outlined,
-              title: "Raise a Complaint",
+            GestureDetector(
               onTap: () {},
+              child: listTile(
+                icon: Icons.favorite_outline,
+                title: "Wishlist",
+              ),
             ),
-            listTile(
-              icon: Icons.format_quote_outlined,
-              title: "FAQs",
+            GestureDetector(
               onTap: () {},
+              child: listTile(
+                icon: Icons.copy_outlined,
+                title: "Raise a Complaint",
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: listTile(
+                icon: Icons.format_quote_outlined,
+                title: "FAQs",
+              ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
